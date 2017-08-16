@@ -16,6 +16,7 @@ function getActiveMenuItem(props) {
 }
 
 function getModuleData(props) {
+  console.log('maincontent')
   const pathname = props.location.pathname;
   const moduleName = /^\/?components/.test(pathname) ?
           'components' : /^\/?yycomponent/.test(pathname) ?
