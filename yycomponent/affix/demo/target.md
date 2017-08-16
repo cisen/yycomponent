@@ -14,7 +14,8 @@ title:
 Set a `target` for 'Affix', which is listen to scroll event of target element (default is `window`).
 
 ````jsx
-import { Affix, Button } from 'antd';
+import { Affix } from 'yycomponent';
+import { Button } from 'antd';
 
 class Demo extends React.Component {
   render() {

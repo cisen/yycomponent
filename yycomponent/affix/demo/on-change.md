@@ -14,7 +14,8 @@ title:
 Callback with affixed state.
 
 ````jsx
-import { Affix, Button } from 'antd';
+import { Affix } from 'yycomponent';
+import { Button } from 'antd';
 
 ReactDOM.render(
   <Affix offsetTop={120} onChange={affixed => console.log(affixed)}>

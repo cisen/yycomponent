@@ -14,7 +14,8 @@ title:
 The simplest usage.
 
 ````jsx
-import { Affix, Button } from 'antd';
+import { Affix } from 'yycomponent';
+import { Button } from 'antd';
 
 ReactDOM.render(
   <div>
