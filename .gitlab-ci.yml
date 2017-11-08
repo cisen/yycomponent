@@ -9,6 +9,7 @@ pages:
   - npm install
   - npm run dist
   environment:
+    name: cisen
     url: http://www.cisen.org
   artifacts:
     paths:
