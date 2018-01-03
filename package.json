@@ -74,7 +74,11 @@
     "rc-upload": "~2.3.0",
     "rc-util": "^4.0.4",
     "react-lazy-load": "^3.0.10",
+    "react-redux": "^5.0.6",
     "react-slick": "~0.14.2",
+    "redux": "^3.7.2",
+    "redux-async-actions-reducers": "^1.1.2",
+    "redux-thunk": "^2.2.0",
     "shallowequal": "^0.2.2",
     "warning": "~3.0.0"
   },
