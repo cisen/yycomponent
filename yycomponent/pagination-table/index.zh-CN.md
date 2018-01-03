@@ -21,4 +21,9 @@ title: pagination-table
 
 | 参数             | 说明                                         | 类型     | 默认值        |
 |------------------|----------------------------------------------|----------|---------------|
-| handleResizeEnd        | 拖动完成后执行的函数                      | func   | 无            |
+| common_table_data        | 存放在redux里面的table的数据源                 | object   | 无            |
+| subscribeParm        | 接口订阅的变量                 | array   | 无            |
+| apiRoute        | 接口地址                | string   | 无            |
+| dispatch        | 用于修改全局变量                | func   | 无            |
+| formatErrorOriginData        | 如果接口错误                | func   | 无            |
+| formatOriginData        | 格式化接口返回的数据                | func   | 无            |
