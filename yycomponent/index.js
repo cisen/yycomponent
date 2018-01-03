@@ -110,4 +110,10 @@ export { default as Upload } from './upload';
 
 export { default as version } from './version';
 
+export { default as Request } from './request';
+
+export { default as Provider } from './provider';
+
 export { default as enhancedResizableTable } from './resizable-table';
+
+export { default as enhancedPaginationTable } from './pagination-table';

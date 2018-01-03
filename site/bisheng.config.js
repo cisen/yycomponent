@@ -15,6 +15,7 @@ module.exports = {
   },
   theme: './site/yytheme',
   htmlTemplate: './site/yytheme/static/template.html',
+  root: './',
   themeConfig: {
     categoryOrder: {
       设计原则: 2,
@@ -39,13 +40,13 @@ module.exports = {
     },
   },
   filePathMapper(filePath) {
-    if (filePath === '/index.html') {
-      return ['/index.html', '/index-cn.html'];
+    if (filePath === './index.html') {
+      return ['./index.html', './index-cn.html'];
     }
-    if (filePath.endsWith('/index.html')) {
+    if (filePath.endsWith('./index.html')) {
       return [filePath, filePath.replace(/\/index\.html$/, '-cn/index.html')];
     }
-    if (filePath !== '/404.html' && filePath !== '/index-cn.html') {
+    if (filePath !== './404.html' && filePath !== './index-cn.html') {
       return [filePath, filePath.replace(/\.html$/, '-cn.html')];
     }
     return filePath;
