@@ -91,28 +91,35 @@ const scroll = {
   x: true,
   y: true
 };
-/*
-columns={show}
-              handleResizeEnd={this.handleResizeEnd}
-*/
 
-//将state.counter绑定到props的counter
+//将common_table_data绑定到props
 const mapStateToProps = (state, props) => {
+  console.log('ownProps1', props)
     return {
         common_table_data: state.common_table_data
     }
 };
 
-//将action的所有方法绑定到props上
-const mapDispatchToProps = (dispatch) => {
+//将dispatch的所有方法绑定到props上
+const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log('ownProps2', ownProps)
     return {
         dispatch: dispatch
     }
 };
 
 class DemoApp extends Component {
+  formatErrorOriginData = () => {
+    const newTableData = {
+      currentPage: 1,
+      items: data,
+      pageSize: 30,
+      totalCount: 0
+    };
+    return newTableData;
+  }
   render() {
-    const { common_table_data, dispatch } = this.props;
+    const { common_table_data, dispatch, location } = this.props;
     console.log('DemoApp', this)
     return (
       <div>
@@ -122,7 +129,10 @@ class DemoApp extends Component {
           pagination={false}
           subscribeParm={[]}
           dispatch={dispatch}
+          formatErrorOriginData={this.formatErrorOriginData}
           apiRoute="/v2/fresh/purchaseOrder/list"
+          location={location}
+          history={window.history}
         />
       </div>
       )

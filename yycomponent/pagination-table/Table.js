@@ -49,7 +49,8 @@ function enhancedPaginationTable(AntdTable) {
         PropTypes.bool
       ]),
       formatOriginData: PropTypes.func,
-      expandedRowKeys: PropTypes.array
+      expandedRowKeys: PropTypes.array,
+      formatErrorOriginData: PropTypes.func
     }
 
     static defaultProps = {
@@ -130,7 +131,7 @@ function enhancedPaginationTable(AntdTable) {
     }
     // 获取数据
     queryData(queryParam) {
-      const { apiRoute, dispatch, formatOriginData } = this.props;
+      const { apiRoute, dispatch, formatOriginData, formatErrorOriginData } = this.props;
       const hash = window.location.hash;
       // const me = this;
       Request(apiRoute).data(queryParam).post().then((json) => {
@@ -150,6 +151,11 @@ function enhancedPaginationTable(AntdTable) {
           }
           // me.initScroll();
           // notification.success({message: '', description: "指标清除成功！"});
+        }
+      }).catch((err) => {
+        if (typeof(formatErrorOriginData) === 'function') {
+          const dispatchData = formatErrorOriginData({});
+          dispatch(actions.loadTableData(dispatchData));
         }
       });
     }
