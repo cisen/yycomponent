@@ -16,7 +16,6 @@ Default activate first tab.
 ````jsx
 import { enhancedPaginationTable, Provider } from 'yycomponent'
 import { Table, Icon } from 'antd';
-import {connect} from 'react-redux';
 import { Component } from 'react';
 
 const PaginationTable = enhancedPaginationTable(Table);
@@ -92,22 +91,6 @@ const scroll = {
   y: true
 };
 
-//将common_table_data绑定到props
-const mapStateToProps = (state, props) => {
-  console.log('ownProps1', props)
-    return {
-        common_table_data: state.common_table_data
-    }
-};
-
-//将dispatch的所有方法绑定到props上
-const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log('ownProps2', ownProps)
-    return {
-        dispatch: dispatch
-    }
-};
-
 class DemoApp extends Component {
   formatErrorOriginData = () => {
     const newTableData = {
@@ -120,7 +103,6 @@ class DemoApp extends Component {
   }
   render() {
     const { common_table_data, dispatch, location } = this.props;
-    console.log('DemoApp', this)
     return (
       <div>
         <PaginationTable
@@ -139,10 +121,8 @@ class DemoApp extends Component {
   }
 }
 
-const ConnectedDemoApp = connect(mapStateToProps, mapDispatchToProps)(DemoApp)
-
 ReactDOM.render(
-  <Provider><ConnectedDemoApp /></Provider>
+  <Provider><DemoApp /></Provider>
 , mountNode);
 
 ````
