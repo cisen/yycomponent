@@ -15,7 +15,7 @@ module.exports = {
   },
   theme: './site/yytheme',
   htmlTemplate: './site/yytheme/static/template.html',
-  root: './',
+  root: '/',
   themeConfig: {
     categoryOrder: {
       设计原则: 2,
